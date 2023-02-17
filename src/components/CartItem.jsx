@@ -1,10 +1,8 @@
 // React
 import { useContext, useState } from "react";
-// Context
-import { dispatchContext } from "../Main";
 
-const CartItem = ({ src, itemName, itemPrice, id }) => {
-  const changeList = useContext(dispatchContext);
+const CartItem = ({ src, itemName, itemPrice, id, context }) => {
+  const changeList = useContext(context);
   const [itemQuantity, setItemQuantity] = useState(1);
 
   const handleItemQuantity = (direction) => {
@@ -32,11 +30,14 @@ const CartItem = ({ src, itemName, itemPrice, id }) => {
         <div className='cart-item-container__details'>
           <h2>{itemName}</h2>
           <p>${itemPrice}</p>
-          <button onClick={() => handleRemove()}>Remove</button>
+          <button type='button' onClick={() => handleRemove()}>
+            Remove
+          </button>
         </div>
       </div>
       <div className='cart-item-container__buttons'>
         <button
+          type='button'
           className='btn-part'
           onClick={() => {
             handleItemQuantity("up");
@@ -46,6 +47,7 @@ const CartItem = ({ src, itemName, itemPrice, id }) => {
         </button>
         <p>{itemQuantity}</p>
         <button
+          type='button'
           className='btn-part'
           onClick={() => {
             handleItemQuantity("down");

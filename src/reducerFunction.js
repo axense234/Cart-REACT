@@ -1,4 +1,6 @@
-export const reducer = (state, action) => {
+/* eslint-disable no-case-declarations */
+/* eslint-disable import/prefer-default-export */
+export const reducerFunction = (state, action) => {
   switch (action.type) {
     case "REMOVE_ITEM":
       const newCartItems = state.cartItems.filter((item) => {

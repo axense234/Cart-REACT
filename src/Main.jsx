@@ -1,7 +1,5 @@
 // React
 import React, { createContext, useReducer } from "react";
-// Reducer
-import { reducer } from "./reducer";
 // Data
 import { defaultState } from "./data";
 // CSS
@@ -9,16 +7,18 @@ import "./style.css";
 // Components
 import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
+// Reducer
+import { reducerFunction } from "./reducerFunction";
 
-export const dispatchContext = createContext();
+const dispatchContext = createContext();
 
 const Main = () => {
-  const [state, dispatch] = useReducer(reducer, defaultState);
+  const [state, dispatch] = useReducer(reducerFunction, defaultState);
 
   return (
     <dispatchContext.Provider value={dispatch}>
       <Navbar cartSize={state.cartSize} />
-      <Cart state={state} dispatch={dispatch} />
+      <Cart state={state} dispatch={dispatch} context={dispatchContext} />
     </dispatchContext.Provider>
   );
 };

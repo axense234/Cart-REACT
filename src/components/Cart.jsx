@@ -2,11 +2,9 @@
 import { useContext } from "react";
 // Components
 import CartItem from "./CartItem";
-// Context
-import { dispatchContext } from "../Main";
 
-const Cart = ({ state }) => {
-  const changeList = useContext(dispatchContext);
+const Cart = ({ state, context }) => {
+  const changeList = useContext(context);
 
   const handleClearCart = () => {
     changeList({ type: "CLEAR_CART" });
@@ -25,6 +23,7 @@ const Cart = ({ state }) => {
               itemPrice={price}
               key={id}
               id={id}
+              context={context}
             />
           );
         })}
@@ -37,7 +36,9 @@ const Cart = ({ state }) => {
             <h2>Total:</h2>
             <p>${state.totalCost}</p>
           </div>
-          <button onClick={() => handleClearCart()}>CLEAR CART</button>
+          <button type='button' onClick={() => handleClearCart()}>
+            CLEAR CART
+          </button>
         </div>
       )}
     </main>

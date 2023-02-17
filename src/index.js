@@ -12,4 +12,4 @@ const MainApp = () => {
   );
 };
 
-ReactDOM.render(<MainApp></MainApp>, document.getElementById("root"));
+ReactDOM.render(<MainApp />, document.getElementById("root"));
