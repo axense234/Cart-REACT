@@ -8,7 +8,7 @@ import "./style.css";
 import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
 // Reducer
-import reducer from "./reducer";
+import reducer from "./reducer.js";
 
 export const dispatchContext = createContext();
 
