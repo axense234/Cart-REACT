@@ -1,4 +1,4 @@
-const reducer = (state, action) => {
+export const reducer = (state, action) => {
   switch (action.type) {
     case "REMOVE_ITEM":
       const newCartItems = state.cartItems.filter((item) => {
@@ -38,5 +38,3 @@ const reducer = (state, action) => {
       throw new Error("Incorrect action type detected.");
   }
 };
-
-export default reducer;
