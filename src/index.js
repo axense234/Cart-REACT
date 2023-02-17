@@ -1,10 +1,8 @@
 // React
 import React from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom";
 // App
 import Main from "./Main";
-
-const root = createRoot(document.getElementById("root"));
 
 const MainApp = () => {
   return (
@@ -14,4 +12,4 @@ const MainApp = () => {
   );
 };
 
-root.render(MainApp);
+ReactDOM.render(<MainApp></MainApp>, document.getElementById("root"));
