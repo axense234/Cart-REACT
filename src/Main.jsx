@@ -4,11 +4,11 @@ import React, { createContext, useReducer } from "react";
 import { defaultState } from "./data";
 // CSS
 import "./style.css";
-// Reducer
-import { reducer } from "./reducer";
 // Components
 import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
+// Reducer
+import reducer from "./reducer";
 
 export const dispatchContext = createContext();
 
