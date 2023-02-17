@@ -1,7 +1,6 @@
 export const reducer = (state, action) => {
   switch (action.type) {
     case "REMOVE_ITEM":
-      console.log("REMOVE_ITEM");
       const newCartItems = state.cartItems.filter((item) => {
         return item.id !== action.payload.id;
       });
@@ -15,7 +14,6 @@ export const reducer = (state, action) => {
       };
 
     case "MINUS_QUANTITY":
-      console.log("MINUS_QUANTITY");
       const minusCartSize = state.cartSize - 1;
       const minusTotalCost = state.totalCost - action.payload;
       return {
@@ -25,10 +23,8 @@ export const reducer = (state, action) => {
       };
 
     case "PLUS_QUANTITY":
-      console.log("PLUS_QUANTITY");
       const plusCartSize = state.cartSize + 1;
       const plusTotalCost = state.totalCost + action.payload;
-      console.log(plusTotalCost);
       return {
         ...state,
         cartSize: plusCartSize,
@@ -36,7 +32,6 @@ export const reducer = (state, action) => {
       };
 
     case "CLEAR_CART":
-      console.log("CLEAR_CART");
       return { ...state, cartSize: 0, cartItems: [] };
 
     default:

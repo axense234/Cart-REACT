@@ -24,3 +24,9 @@ export const items = [
     price: 599.99,
   },
 ];
+
+export const defaultState = {
+  cartItems: items,
+  cartSize: items.length,
+  totalCost: items.reduce((total, item) => total + item.price, 0),
+};

@@ -1,12 +1,13 @@
+// React
 import React from "react";
 import ReactDOM from "react-dom";
 // App
-import { App } from "./App";
+import Main from "./Main";
 
 const MainApp = () => {
   return (
     <React.StrictMode>
-      <App></App>
+      <Main />
     </React.StrictMode>
   );
 };
