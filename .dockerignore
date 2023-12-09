@@ -1,0 +1,9 @@
+**/.env
+**/.git
+**/.gitignore
+**/.vs
+**/.vscode
+**/Dockerfile
+**/node_modules
+LICENSE
+README.md

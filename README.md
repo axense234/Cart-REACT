@@ -11,6 +11,7 @@ A simple React Project that focuses on the basics of react,mainly the useReducer
 ### Dependencies
 
 - Check package.json for details.
+- **Docker** if you plan on running this app as a container
 
 ### Installing
 
@@ -20,9 +21,15 @@ git clone https://github.com/axense234/Cart-REACT.git
 
 ### Executing program
 
+- **Using NPM**
 ```
 npm install
 npm start
+```
+- **Using Docker**
+```
+docker build -t cart-react:0.3.0 .
+docker run -p 3000:3000 cart-react:0.3.0
 ```
 
 ## **Authors**
@@ -30,7 +37,8 @@ npm start
 - **axense234**
 
 ## **Version History**
-
+- 0.3
+  - Analyzed the code to gather to-do tasks and added docker to site.
 - 0.2
   - Improved css,folder structure and scalability
   - See [commit change](https://github.com/axense234/Cart-REACT/commits/master) or See [release history](https://github.com/axense234/Cart-REACT/releases)
